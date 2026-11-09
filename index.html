@@ -4,54 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOIR CORTEGE — AI Music Crew</title>
+    <!-- Подключаем стильные иконки для соцсетей -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             background-color: #0b0b0b; 
             color: #f5f5f5; 
             font-family: 'Courier New', Courier, monospace; 
             display: flex; 
-            flex-direction: column;
             justify-content: center; 
             align-items: center; 
-            height: 100vh; 
-            margin: 0;
+            min-height: 100vh; 
             padding: 20px;
             text-align: center;
         }
         .container {
-            max-width: 600px;
-            border: 1px solid #333;
-            padding: 40px;
+            max-width: 550px;
+            width: 100%;
+            border: 1px solid #222;
+            padding: 40px 30px;
             background: #111;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            border-radius: 4px;
         }
         h1 { 
-            font-size: 2.5rem; 
-            letter-spacing: 4px; 
+            font-size: 2.3rem; 
+            letter-spacing: 5px; 
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .subtitle { 
+            font-size: 0.95rem; 
+            line-height: 1.6;
+            color: #777;
+            margin-bottom: 35px;
+        }
+        
+        /* Стили для музыкального плеера */
+        .player-container {
+            margin-bottom: 35px;
+            background: #161616;
+            padding: 20px;
+            border: 1px solid #252525;
+            border-radius: 4px;
+        }
+        .player-title {
+            font-size: 0.8rem;
+            color: #888;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        p { 
-            font-size: 1rem; 
-            line-height: 1.6;
-            color: #999;
-            margin-bottom: 30px;
+        audio {
+            width: 100%;
+            outline: none;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border: 1px solid #fff;
-            color: #fff;
-            text-decoration: none;
+        
+        /* Стили для кнопок соцсетей */
+        .links-title {
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            font-size: 0.85rem;
             letter-spacing: 2px;
-            transition: all 0.3s ease;
         }
-        .btn:hover {
-            background: #fff;
-            color: #000;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 130px;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        .social-btn:hover {
+            border-color: #fff;
+            color: #fff;
+            background: #1a1a1a;
+        }
+        .social-btn i {
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -59,8 +106,26 @@
 
     <div class="container">
         <h1>NOIR CORTEGE</h1>
-        <p>AI music crew. Straight from St. Petersburg.<br>Well-mannered, but uneducated.</p>
-        <a href="#" class="btn">Listen Tracks</a>
+        <p class="subtitle">AI music crew. Straight from St. Petersburg.<br>Well-mannered, but uneducated.</p>
+        
+        <!-- Блок с аудио (замените трек в будущем) -->
+        <div class="player-container">
+            <div class="player-title"><i class="fa-solid fa-play"></i> Latest Release</div>
+            <audio controls>
+                <source src="https://soundhelix.com" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио-плеер.
+            </audio>
+        </div>
+
+        <!-- Блок ссылок -->
+        <div class="links-title">Listen & Follow</div>
+        <div class="social-links">
+            <!-- Вместо знака # в кавычках вставляйте свои реальные ссылки -->
+            <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-vk"></i> VKontakte</a>
+            <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>
+            <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
+            <a href="#" target="_blank" class="social-btn"><i class="fa-solid fa-music"></i> Yandex</a>
+        </div>
     </div>
 
 </body>
