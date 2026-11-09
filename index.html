@@ -21,7 +21,7 @@
             position: relative;
         }
 
-        /* Контейнер для центральной карточки */
+        /* Центральная карточка */
         .container {
             max-width: 550px;
             width: 100%;
@@ -31,7 +31,7 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.9);
             border-radius: 4px;
             position: relative;
-            z-index: 10; /* Карточка всегда поверх видео */
+            z-index: 10;
         }
         h1 { 
             font-size: 2.3rem; 
@@ -47,7 +47,7 @@
             margin-bottom: 35px;
         }
         
-        /* Стили для кнопок */
+        /* Кнопки соцсетей */
         .links-title {
             font-size: 0.8rem;
             color: #555;
@@ -83,23 +83,23 @@
             background: #1a1a1a;
         }
 
-        /* Боковые видео-контейнеры */
+        /* Видео по бокам */
         .video-background {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            width: 315px; /* Пропорции Shorts/TikTok на десктопе */
+            width: 315px;
             height: 560px;
             z-index: 1;
-            pointer-events: none; /* Чтобы видео нельзя было случайно кликнуть */
+            pointer-events: none;
             border: 1px solid #1a1a1a;
             border-radius: 8px;
             overflow: hidden;
-            opacity: 0.4; /* Приглушаем яркость, чтобы не отвлекало от текста */
+            opacity: 0.4;
             transition: opacity 0.3s ease;
         }
         .video-background:hover {
-            opacity: 0.7; /* При наведении видео становится чуть ярче */
+            opacity: 0.7;
         }
         .video-left { left: 5%; }
         .video-right { right: 5%; }
@@ -110,7 +110,7 @@
             border: none;
         }
 
-        /* Адаптивность: скрываем видео на смартфонах и небольших планшетах */
+        /* Скрываем видео на мобильных устройствах */
         @media (max-width: 1200px) {
             .video-background {
                 display: none;
@@ -120,9 +120,8 @@
 </head>
 <body>
 
-    <!-- Левое видео -->
+    <!-- Левое видео (вместо bssmGzicB48 вставьте свой ID из YouTube Shorts) -->
     <div class="video-background video-left">
-        <!-- ЗАМЕНИТЕ ЭТОТ ID НА СВОЙ (ВМЕСТО bssmGzicB48) -->
         <iframe src="https://youtube.com" allow="autoplay"></iframe>
     </div>
 
@@ -133,16 +132,15 @@
 
         <div class="links-title">Listen & Follow</div>
         <div class="social-links">
-            <a href="#" target="_blank" class="social-btn"><i class="fa-solid fa-music"></i> Yandex</a>
+            <a href="#" target="_blank" class="social-btn"><i class="fa-solid fa-music"></i> Яндекс Муызка</a>
             <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-spotify"></i> Spotify</a>
             <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
             <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i> Tik-Tok</a>
         </div>
     </div>
 
-    <!-- Правое видео -->
+    <!-- Правое видео (вместо bssmGzicB48 вставьте тот же ID из YouTube Shorts) -->
     <div class="video-background video-right">
-        <!-- ЗАМЕНИТЕ ЭТОТ ID ЕЩЕ РАЗ (ВМЕСТО bssmGzicB48) -->
         <iframe src="https://youtube.com" allow="autoplay"></iframe>
     </div>
 
