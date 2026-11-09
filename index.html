@@ -15,42 +15,41 @@
             flex-direction: column;
             align-items: center; 
             min-height: 100vh; 
-            padding: 40px 20px;
             text-align: center;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Общий контейнер для всей центральной структуры */
-        .main-wrapper {
-            max-width: 550px;
+        /* Полноэкранная шапка-баннер на самом верху */
+        .full-width-banner {
             width: 100%;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Стильная шапка сайта */
-        .header-banner {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9; /* Сохраняет пропорции широкоформатной картинки */
+            height: 45vh; /* Занимает 45% от высоты экрана, можно настроить */
             background-image: url('media/img/banner.jpg'); 
             background-size: cover;
             background-position: center;
-            border: 1px solid #222;
-            border-bottom: none; /* Убираем нижнюю границу, чтобы плавно соединить с окном */
-            border-radius: 4px 4px 0 0;
+            border-bottom: 1px solid #1a1a1a;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Центральная карточка с информацией (ровно под шапкой) */
+        /* Общий контейнер для нижней части (карточка + видео по бокам) */
+        .content-wrapper {
+            max-width: 550px;
+            width: 100%;
+            position: relative;
+            margin-top: 40px; /* Отступ карточки от баннера сверху */
+            padding: 0 20px 40px 20px;
+        }
+
+        /* Центральная карточка с информацией */
         .container {
             width: 100%;
             border: 1px solid #222;
             padding: 40px 30px;
             background: rgba(17, 17, 17, 0.95);
             box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-            border-radius: 0 0 4px 4px;
+            border-radius: 4px;
+            position: relative;
+            z-index: 10;
         }
         h1 { 
             font-size: 2.3rem; 
@@ -102,11 +101,10 @@
             background: #1a1a1a;
         }
 
-        /* Видео по бокам */
-        /* Видео по бокам */
+        /* Видео по бокам (теперь привязаны к контенту ниже баннера) */
         .video-background {
             position: fixed;
-            top: 40px; /* Выравниваем точно по верхнему отступу body */
+            top: calc(45vh + 40px); /* Выравнивание ровно по верхней линии карточки */
             width: 315px;
             height: 560px;
             z-index: 1;
@@ -139,18 +137,16 @@
 </head>
 <body>
 
-    <!-- Левое видео (Замените оба ID bssmGzicB48 на ваш реальный ID из YouTube Shorts) -->
+    <!-- 1. Полноэкранный баннер на всю ширину -->
+    <div class="full-width-banner"></div>
+
+    <!-- Левое видео (вместо bssmGzicB48 вставьте свой ID из YouTube Shorts) -->
     <div class="video-background video-left">
         <iframe src="https://youtube.com" allow="autoplay"></iframe>
     </div>
 
-    <!-- Единая центральная структура -->
-    <div class="main-wrapper">
-        
-        <!-- Шапка сайта -->
-        <div class="header-banner"></div>
-
-        <!-- Окно под ней -->
+    <!-- 2. Нижняя центральная часть сайта под баннером -->
+    <div class="content-wrapper">
         <div class="container">
             <h1>NOIR CORTEGE</h1>
             <p class="subtitle">AI music crew. Straight from St. Petersburg.<br>Well-mannered, but uneducated.</p>
@@ -163,10 +159,9 @@
                 <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i> Tik-Tok</a>
             </div>
         </div>
-
     </div>
 
-    <!-- Правое видео (Замените оба ID bssmGzicB48 на ваш реальный ID из YouTube Shorts) -->
+    <!-- Правое видео (вместо bssmGzicB48 вставьте тот же ID из YouTube Shorts) -->
     <div class="video-background video-right">
         <iframe src="https://youtube.com" allow="autoplay"></iframe>
     </div>
