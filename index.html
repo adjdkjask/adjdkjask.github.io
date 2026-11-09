@@ -12,26 +12,45 @@
             color: #f5f5f5; 
             font-family: 'Courier New', Courier, monospace; 
             display: flex; 
-            justify-content: center; 
+            flex-direction: column;
             align-items: center; 
             min-height: 100vh; 
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Центральная карточка */
-        .container {
+        /* Общий контейнер для всей центральной структуры */
+        .main-wrapper {
             max-width: 550px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Стильная шапка сайта */
+        .header-banner {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9; /* Сохраняет пропорции широкоформатной картинки */
+            background-image: url('ССЫЛКА_НА_ВАШЕ_ФОТО'); 
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #222;
+            border-bottom: none; /* Убираем нижнюю границу, чтобы плавно соединить с окном */
+            border-radius: 4px 4px 0 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Центральная карточка с информацией (ровно под шапкой) */
+        .container {
             width: 100%;
             border: 1px solid #222;
             padding: 40px 30px;
             background: rgba(17, 17, 17, 0.95);
             box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-            border-radius: 4px;
-            position: relative;
-            z-index: 10;
+            border-radius: 0 0 4px 4px;
         }
         h1 { 
             font-size: 2.3rem; 
@@ -120,26 +139,34 @@
 </head>
 <body>
 
-    <!-- Левое видео (вместо bssmGzicB48 вставьте свой ID из YouTube Shorts) -->
+    <!-- Левое видео (Замените оба ID bssmGzicB48 на ваш реальный ID из YouTube Shorts) -->
     <div class="video-background video-left">
         <iframe src="https://youtube.com" allow="autoplay"></iframe>
     </div>
 
-    <!-- Центральный контент сайта -->
-    <div class="container">
-        <h1>NOIR CORTEGE</h1>
-        <p class="subtitle">AI music crew. Straight from St. Petersburg.<br>Well-mannered, but uneducated.</p>
+    <!-- Единая центральная структура -->
+    <div class="main-wrapper">
+        
+        <!-- Шапка сайта -->
+        <div class="header-banner"></div>
 
-        <div class="links-title">Listen & Follow</div>
-        <div class="social-links">
-            <a href="#" target="_blank" class="social-btn"><i class="fa-solid fa-music"></i> Яндекс Муызка</a>
-            <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-spotify"></i> Spotify</a>
-            <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
-            <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i> Tik-Tok</a>
+        <!-- Окно под ней -->
+        <div class="container">
+            <h1>NOIR CORTEGE</h1>
+            <p class="subtitle">AI music crew. Straight from St. Petersburg.<br>Well-mannered, but uneducated.</p>
+
+            <div class="links-title">Listen & Follow</div>
+            <div class="social-links">
+                <a href="#" target="_blank" class="social-btn"><i class="fa-solid fa-music"></i> Yandex</a>
+                <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-tiktok"></i> Tik-Tok</a>
+            </div>
         </div>
+
     </div>
 
-    <!-- Правое видео (вместо bssmGzicB48 вставьте тот же ID из YouTube Shorts) -->
+    <!-- Правое видео (Замените оба ID bssmGzicB48 на ваш реальный ID из YouTube Shorts) -->
     <div class="video-background video-right">
         <iframe src="https://youtube.com" allow="autoplay"></iframe>
     </div>
